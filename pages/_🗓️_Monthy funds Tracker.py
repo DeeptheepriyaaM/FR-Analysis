@@ -45,8 +45,8 @@ options = {
 st_echarts(options=options, height="400px")
 
 st.write("Total: of 2023 :","?")
-st.write("Total: of 2022 :",500)
-st.write("Total: of 2021 :",500)
-st.write("Total: of 2020 :",500)
+st.write("Total: of 2022 :",17600)
+st.write("Total: of 2021 :",30300)
+st.write("Total: of 2020 :",47850)
 
 
