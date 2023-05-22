@@ -3,91 +3,209 @@ import pandas as pd
 import numpy as np
 from streamlit_echarts import st_echarts
 
-st.title("Monthly Funds Tracker")
+st.subheader("Fund Raised By our Voulunteer For the Events")
 
-options = {
-    "tooltip": {"trigger": "axis"},
-    "legend": {"data": ["2023","2022", "2021", "2020"]},
-    "grid": {"left": "3%", "right": "4%", "bottom": "3%", "containLabel": True},
-    "xAxis": {
-        "type": "category",
-        "boundaryGap": False,
-        "data": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug","Sep","Oct","Nov","Dec"],
-    },
-    "yAxis": {"type": "value"},
-    "series": [
-                {
-            "name": "2023",
-            "type": "line",
-            "stack": "Total",
-            "data": [1000, 1000, 900, 900, 600],
-        },
-        {
-            "name": "2022",
-            "type": "line",
-            "stack": "Total",
-            "data": [2100, 2100, 2100, 1900, 1800, 1600, 1400, 1300, 1100, 1000, 600, 600],
-        },
-        {
-            "name": "2021",
-            "type": "line",
-            "stack": "Total",
-            "data": [3500, 3000, 3000, 3000, 2900, 2700, 2500, 2300, 2200, 2000, 1800, 1400],
-        },
-        {
-            "name": "2020",
-            "type": "line",
-            "stack": "Total",
-            "data": [5150, 4900, 4600, 4700, 4900, 4600, 4400, 4000, 3600, 2800, 2200, 2000],
-        },
-    ],
-}
-st_echarts(options=options, height="400px")
+check = st.selectbox(
+    'Select the Events to see the Event Related Data',
+    ('Event 22', 'Event 23', 'Event 25',"Event 26"))
 
-st.divider()
-st.subheader("Total Monthly Funds Collected based On Catagories")
+if check == 'Event 22':
+    st.write(check)
+    options = {
+        "tooltip": {"trigger": "item"},
+        "legend": {"left": "0%", "right": "0%", "Top": "0%","Bottom":"10%"},
+        "series": [
+            {
+                "name": "Event 22",
+                "type": "pie",
+                "radius": "50%",
+                "data": [
+                    {"value": 1000, "name": "R.Venkataramanan"},
+                    {"value": 600, "name": "R.M Abdul Khudus"},
+                    {"value": 500, "name": "Y.M Jagadeesh"},
+                    {"value": 1100, "name": "Habeebulla"},
+                    {"value": 1050, "name": "P.B Ravi Chandhar"},
+                    {"value": 500, "name": "J.H.Abdul Kalam Azad"},
+                    {"value": 700, "name": "K.R.Harish"},
+                    {"value": 300, "name": "B.Rupesh Kumar"},
+                    {"value": 1000, "name": "S.Parthasarathy"},
+                    {"value": 6000, "name": "N.Evangelin Ruby"},
+                    {"value": 700, "name": "A.Sandeep"},
+                    {"value": 1200, "name": "E.Subhashini"},
+                    {"value": 200, "name": "V. Akash"},
+                    {"value": 2201, "name": "T. Madhusudhan"},
+                    {"value": 300, "name": "A.Karthick"},
+                    {"value": 2000, "name": "M.Kumar swamy "},
+                    {"value": 550, "name": "P.Mythili "},
+                    {"value": 5000, "name": "S.Jothiram"},
+                    {"value": 650, "name": "S.Bharath Kumar"},
+                    {"value": 1000, "name": "V.Pranav Sabareesh"},
+                    {"value": 2500, "name": "B.Santhosh "},
+                    {"value": 1600, "name": "J Jacob Israel "},
+                    {"value": 1000, "name": "Navudu Devi Anudeesh "},
+                    {"value": 3090, "name": "S.Govindarajulu"},
+                    {"value": 200, "name": "Vignesh.s"},
+                    {"value": 2600, "name": "N Jacqulin Jancy Rani"},
+                    {"value": 1000, "name": "Gowtham "},
+                ],
+                "emphasis": {
+                    "itemStyle": {
+                        "shadowBlur": 10,
+                        "shadowOffsetX": 0,
+                        "shadowColor": "rgba(0, 0, 0, 0.5)",
+                    }
+                },
+            }
+        ],
+    }
 
-st.write("Total: of 2023 :","?")
-st.write("Total: of 2022 :", 17600)
-st.write("Total: of 2021 :",30300)
-st.write("Total: of 2020 :",47850)
+    # Add a Streamlit slider to control the pie chart
+    slider_value = st.slider("Value", 0, 6000, 0, 100)
+    st.markdown("<span style='color: Green'>Control the slider to see the changes in the Volunteer Contributions for the Event</span>", unsafe_allow_html=True)
+    st.write("Contribution for "+check+">= ",slider_value)
 
-options = {
-    "tooltip": {"trigger": "axis", "axisPointer": {"type": "shadow"}},
-    "legend": {
-        "data": ["Working People", "Students", "Jobless"]
-    },
-    "grid": {"left": "3%", "right": "4%", "bottom": "3%", "containLabel": True},
-    "xAxis": {"type": "value"},
-    "yAxis": {
-        "type": "category",
-        "data": ["2022", "2021", "2020"],
-    },
-    "series": [
-        {
-            "name": "Working People",
-            "type": "bar",
-            "stack": "total",
-            "label": {"show": True},
-            "emphasis": {"focus": "series"},
-            "data": [15000,25000,38000]
-        },
-        {
-            "name": "Students",
-            "type": "bar",
-            "stack": "total",
-            "label": {"show": True},
-            "emphasis": {"focus": "series"},
-            "data": [1600, 4800, 6850],
-        },
-        {
-            "name": "Jobless",
-            "type": "bar",
-            "stack": "total",
-            "label": {"show": True},
-            "emphasis": {"focus": "series"},
-            "data": [1000, 500, 3000],
-        },
-    ],
-}
-st_echarts(options=options, height="500px")
+    # Filter the data based on the slider value
+    filtered_data = [data for data in options["series"][0]["data"] if data["value"] >= slider_value]
+
+    # Update the data for the pie chart with the filtered data
+    options["series"][0]["data"] = filtered_data
+
+    st_echarts(options=options, height="800px")
+elif check == "Event 23":
+    options = {
+        "tooltip": {"trigger": "item"},
+        "legend": {"left": "0%", "right": "0%", "Top": "0%","Bottom":"10%"},
+        "series": [
+            {
+                "name": "Event 23",
+                "type": "pie",
+                "radius": "50%",
+                "data": [
+                    {"value": 2000, "name": "S.Sathish Kumar"},
+                    {"value": 1000, "name": "N. Evangelin Ruby"},
+                    {"value": 500, "name": "Thalin Dakshi"},
+                    {"value": 500, "name": "S. Bharath Kumar"},
+                    {"value": 1000, "name": "Navudu Devi Anudeesh"},
+                ],
+                "emphasis": {
+                    "itemStyle": {
+                        "shadowBlur": 10,
+                        "shadowOffsetX": 0,
+                        "shadowColor": "rgba(0, 0, 0, 0.5)",
+                    }
+                },
+            }
+        ],
+    }
+
+    # Add a Streamlit slider to control the pie chart
+    slider_value = st.slider("Value", 0, 2000, 0, 100)
+    st.markdown("<span style='color: Green'>Control the slider to see the changes in the Volunteer Contributions for the Event</span>", unsafe_allow_html=True)
+    st.write("Contribution for "+check+">= ",slider_value)
+
+    # Filter the data based on the slider value
+    filtered_data = [data for data in options["series"][0]["data"] if data["value"] >= slider_value]
+
+    # Update the data for the pie chart with the filtered data
+    options["series"][0]["data"] = filtered_data
+
+    st_echarts(options=options, height="600px")
+elif check == "Event 25":
+    options = {
+        "tooltip": {"trigger": "item"},
+        "legend": {"left": "0%", "right": "0%", "Top": "0%","Bottom":"10%"},
+        "series": [
+            {
+                "name": "Event 25",
+                "type": "pie",
+                "radius": "50%",
+                "data": [
+                    {"value": 24530, "name": "S.Sathish Kumar"},
+                    {"value": 1300, "name": "P.B.Ravi Chandhar"},
+                    {"value": 500, "name": "J.H.Abdul Kalam Azad"},
+                    {"value": 600, "name": "N.Evangelin Ruby"},
+                    {"value": 1500, "name": "A.Sandeep"},
+                    {"value": 300, "name": "J.Jai Bharath"},
+                    {"value": 1500, "name": "T.M.Jai Pranesh"},
+                    {"value": 3300, "name": "R.Albert Paul"},
+                    {"value": 500, "name": "P.Mythili"},
+                    {"value": 8100, "name": "S.Jothiram"},
+                    {"value": 500, "name": "S.Bharath kumar"},
+                    {"value": 450, "name": "V.Pranav Sabareesh"},
+                    {"value": 300, "name": "V.Lisanraj"},
+                    {"value": 1000, "name": "B.Santhosh"},
+                    {"value": 300, "name": "R.Rajesh"},
+                    {"value": 1000, "name": "J Jacob Israel"},
+                    {"value": 1500, "name": "Navudu Devi Anudeesh"},
+                    {"value": 1150, "name": "N Jacqulin Jancy Rani"},
+                    {"value": 1000, "name": "Goutham"},
+                    {"value": 100, "name": "Richard"},
+                    {"value": 3000, "name": "Ram"},
+                ],
+                "emphasis": {
+                    "itemStyle": {
+                        "shadowBlur": 10,
+                        "shadowOffsetX": 0,
+                        "shadowColor": "rgba(0, 0, 0, 0.5)",
+                    }
+                },
+            }
+        ],
+    }
+
+    # Add a Streamlit slider to control the pie chart
+    slider_value = st.slider("Value", 0, 25000, 0, 100)
+    st.markdown("<span style='color: Green'>Control the slider to see the changes in the Volunteer Contributions for the Event</span>", unsafe_allow_html=True)
+    st.write("Contribution for "+check+">= ",slider_value)
+
+    # Filter the data based on the slider value
+    filtered_data = [data for data in options["series"][0]["data"] if data["value"] >= slider_value]
+
+    # Update the data for the pie chart with the filtered data
+    options["series"][0]["data"] = filtered_data
+
+    st_echarts(options=options, height="600px")
+else:
+    options = {
+        "tooltip": {"trigger": "item"},
+        "legend": {"left": "0%", "right": "0%", "Top": "0%","Bottom":"10%"},
+        "series": [
+            {
+                "name": "Event 26",
+                "type": "pie",
+                "radius": "50%",
+                "data": [
+                    {"value": 500, "name": "P.B.Ravi Chandhar"},
+                    {"value": 3500, "name": "J.H.Abdul Kalam Azad"},
+                    {"value": 700, "name": "S.Parthasarathy"},
+                    {"value": 1310, "name": "K.Arun Kumar"},
+                    {"value": 2000, "name": "T.M.Jai Pranesh"},
+                    {"value": 500, "name": "P.Mythili"},
+                    {"value": 5850, "name": "S.Jothiram"},
+                    {"value": 700, "name": "S.Bharath kumar"},
+                    {"value": 1000, "name": "Navudu Devi Anudeesh"},
+                    {"value": 3000, "name": "Goutham"},
+                    {"value": 300, "name": "Nishanth"},
+                ],
+                "emphasis": {
+                    "itemStyle": {
+                        "shadowBlur": 10,
+                        "shadowOffsetX": 0,
+                        "shadowColor": "rgba(0, 0, 0, 0.5)",
+                    }
+                },
+            }
+        ],
+    }
+
+    # Add a Streamlit slider to control the pie chart
+    slider_value = st.slider("Value", 0, 25000, 0, 100)
+    st.write("Contribution for "+check+">= ",slider_value)
+
+    # Filter the data based on the slider value
+    filtered_data = [data for data in options["series"][0]["data"] if data["value"] >= slider_value]
+
+    # Update the data for the pie chart with the filtered data
+    options["series"][0]["data"] = filtered_data
+
+    st_echarts(options=options, height="600px") 
