@@ -10,7 +10,6 @@ check = st.selectbox(
     ('Event 22', 'Event 23', 'Event 25',"Event 26"))
 
 if check == 'Event 22':
-    st.write(check)
     options = {
         "tooltip": {"trigger": "item"},
         "legend": {"left": "0%", "right": "0%", "Top": "0%","Bottom":"10%"},
@@ -60,8 +59,7 @@ if check == 'Event 22':
     }
 
     # Add a Streamlit slider to control the pie chart
-    slider_value = st.slider("Value", 0, 6000, 0, 100)
-    st.markdown("<span style='color: Green'>Control the slider to see the changes in the Volunteer Contributions for the Event</span>", unsafe_allow_html=True)
+    slider_value = st.slider("Control the slider to see the changes in the Volunteer Contributions for the Event", 0, 6000, 0, 100)
     st.write("Contribution for "+check+">= ",slider_value)
 
     # Filter the data based on the slider value
@@ -69,7 +67,7 @@ if check == 'Event 22':
 
     # Update the data for the pie chart with the filtered data
     options["series"][0]["data"] = filtered_data
-
+    st.divider()
     st_echarts(options=options, height="800px")
 elif check == "Event 23":
     options = {
@@ -99,8 +97,7 @@ elif check == "Event 23":
     }
 
     # Add a Streamlit slider to control the pie chart
-    slider_value = st.slider("Value", 0, 2000, 0, 100)
-    st.markdown("<span style='color: Green'>Control the slider to see the changes in the Volunteer Contributions for the Event</span>", unsafe_allow_html=True)
+    slider_value = st.slider("Control the slider to see the changes in the Volunteer Contributions for the Event", 0, 2000, 0, 100)
     st.write("Contribution for "+check+">= ",slider_value)
 
     # Filter the data based on the slider value
@@ -108,7 +105,7 @@ elif check == "Event 23":
 
     # Update the data for the pie chart with the filtered data
     options["series"][0]["data"] = filtered_data
-
+    st.divider()
     st_echarts(options=options, height="600px")
 elif check == "Event 25":
     options = {
@@ -154,16 +151,14 @@ elif check == "Event 25":
     }
 
     # Add a Streamlit slider to control the pie chart
-    slider_value = st.slider("Value", 0, 25000, 0, 100)
-    st.markdown("<span style='color: Green'>Control the slider to see the changes in the Volunteer Contributions for the Event</span>", unsafe_allow_html=True)
+    slider_value = st.slider("Control the slider to see the changes in the Volunteer Contributions for the Event", 0, 25000, 0, 100)
     st.write("Contribution for "+check+">= ",slider_value)
-
     # Filter the data based on the slider value
     filtered_data = [data for data in options["series"][0]["data"] if data["value"] >= slider_value]
 
     # Update the data for the pie chart with the filtered data
     options["series"][0]["data"] = filtered_data
-
+    st.divider()
     st_echarts(options=options, height="600px")
 else:
     options = {
@@ -199,7 +194,7 @@ else:
     }
 
     # Add a Streamlit slider to control the pie chart
-    slider_value = st.slider("Value", 0, 25000, 0, 100)
+    slider_value = st.slider("Control the slider to see the changes in the Volunteer Contributions for the Event", 0, 25000, 0, 100)
     st.write("Contribution for "+check+">= ",slider_value)
 
     # Filter the data based on the slider value
@@ -207,5 +202,5 @@ else:
 
     # Update the data for the pie chart with the filtered data
     options["series"][0]["data"] = filtered_data
-
+    st.divider()
     st_echarts(options=options, height="600px") 
