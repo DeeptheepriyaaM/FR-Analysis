@@ -69,4 +69,4 @@ if check == 'Event 22':
     options["series"][0]["data"] = filtered_data
 
     # Display the chart using st_echarts
-    st_echarts(options=options, height="600px")
+    st_echarts(options=options, height="800px")
