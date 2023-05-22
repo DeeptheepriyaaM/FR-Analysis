@@ -6,7 +6,6 @@ from streamlit_echarts import st_echarts
 st.title("Monthly Funds Tracker past 5 years")
 
 options = {
-    "title": {"text": "Monthly Fund"},
     "tooltip": {"trigger": "axis"},
     "legend": {"data": ["2023","2022", "2021", "2020"]},
     "grid": {"left": "3%", "right": "4%", "bottom": "3%", "containLabel": True},
