@@ -3,11 +3,11 @@ import pandas as pd
 import numpy as np
 from streamlit_echarts import st_echarts
 
-st.subheader("Fund Raised By our Voulunteer For the Events")
 
 check = st.selectbox(
     'Select the Events to see the Event Related Data',
     ('Event 22', 'Event 23', 'Event 25',"Event 26"))
+st.subheader(":blue[Fund Raised By our Voulunteer For the Events]:")
 
 if check == 'Event 22':
     options = {
