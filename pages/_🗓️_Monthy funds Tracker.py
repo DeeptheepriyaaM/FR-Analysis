@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from streamlit_echarts import st_echarts
 
-st.title("Monthly Funds Tracker past 5 years")
+st.title("Monthly Funds Tracker")
 
 options = {
     "tooltip": {"trigger": "axis"},
@@ -44,9 +44,50 @@ options = {
 }
 st_echarts(options=options, height="400px")
 
+st.divider()
+st.subheader("Total Monthly Funds Collected based On Catagories")
+
 st.write("Total: of 2023 :","?")
-st.write("Total: of 2022 :",17600)
+st.write("Total: of 2022 :", 17600)
 st.write("Total: of 2021 :",30300)
 st.write("Total: of 2020 :",47850)
 
-
+options = {
+    "tooltip": {"trigger": "axis", "axisPointer": {"type": "shadow"}},
+    "legend": {
+        "data": ["Working People", "Students", "Jobless"]
+    },
+    "grid": {"left": "3%", "right": "4%", "bottom": "3%", "containLabel": True},
+    "xAxis": {"type": "value"},
+    "yAxis": {
+        "type": "category",
+        "data": ["2022", "2021", "2020"],
+    },
+    "series": [
+        {
+            "name": "Working People",
+            "type": "bar",
+            "stack": "total",
+            "label": {"show": True},
+            "emphasis": {"focus": "series"},
+            "data": [15000,25000,38000]
+        },
+        {
+            "name": "Students",
+            "type": "bar",
+            "stack": "total",
+            "label": {"show": True},
+            "emphasis": {"focus": "series"},
+            "data": [1600, 4800, 6850],
+        },
+        {
+            "name": "Jobless",
+            "type": "bar",
+            "stack": "total",
+            "label": {"show": True},
+            "emphasis": {"focus": "series"},
+            "data": [1000, 500, 3000],
+        },
+    ],
+}
+st_echarts(options=options, height="500px")
