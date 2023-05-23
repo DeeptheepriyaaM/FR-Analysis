@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from streamlit_echarts import st_echarts
+import random
 
 st.title("Monthly Funds Tracker")
 
@@ -44,13 +45,20 @@ options = {
 }
 st_echarts(options=options, height="400px")
 
+st.subheader("Growth Rate Of Monthly Funds collections Over Years")
+
+# Code of showing the Metrics Of the Monthly Funds
+
+twenty,twentyone,twentytwo,twentythree = st.columns(4)
+
+twenty.metric(label="2020", value="47850", delta="250 %")
+twentyone.metric(label="2021", value="30300", delta="-44.9 %")
+twentytwo.metric(label="2022", value="17600", delta="-53.02 %")
+twentythree.metric(label="2023", value="4400", delta="0",delta_color="off")
+
 st.divider()
 st.subheader("Total Monthly Funds Collected based On Catagories")
 
-st.write("Total: of 2023 :","?")
-st.write("Total: of 2022 :", 17600)
-st.write("Total: of 2021 :",30300)
-st.write("Total: of 2020 :",47850)
 
 options = {
     "tooltip": {"trigger": "axis", "axisPointer": {"type": "shadow"}},
@@ -91,3 +99,9 @@ options = {
     ],
 }
 st_echarts(options=options, height="500px")
+
+twentythree = st.write("Total: of 2023 :","?")
+twentytwo = st.write("Total: of 2022 :", 17600)
+twentyone = st.write("Total: of 2021 :",30300)
+twenty = st.write("Total: of 2020 :",47850)
+st.divider()
