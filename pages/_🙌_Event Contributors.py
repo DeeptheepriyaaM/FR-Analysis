@@ -538,3 +538,12 @@ elif check == "Event 38":
     options["series"][0]["data"] = filtered_data
     st.divider()
     st_echarts(options=options, height="800px") 
+    
+hide_st_style = """
+<style>
+#Mainmenu {Visibility : hidden;}
+footer {Visibility : hidden;}
+header {Visibility : hidden;}
+</style>
+"""
+st.markdown(hide_st_style,unsafe_allow_html=True)
