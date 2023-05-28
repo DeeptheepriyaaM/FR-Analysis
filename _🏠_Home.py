@@ -11,3 +11,12 @@ st.write(":blue[Monthly Funds Tracker]: We can visualize our Monthly funds data,
 st.write(":blue[Event Contributors]: We can visualize our Event Contributons done by our volunter, we can filter based on amount of donations and display it in chart")
 
 st.write("We are still testing the application")
+
+hide_st_style = """
+<style>
+#Mainmenu {Visibility : hidden;}
+footer {Visibility : hidden;}
+header {Visibility : hidden;}
+</style>
+"""
+st.markdown(hide_st_style,unsafe_allow_html=True)
