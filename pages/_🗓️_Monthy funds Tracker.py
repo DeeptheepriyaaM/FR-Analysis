@@ -105,3 +105,12 @@ twentytwo = st.write("Total: of 2022 :", 17600)
 twentyone = st.write("Total: of 2021 :",30300)
 twenty = st.write("Total: of 2020 :",47850)
 st.divider()
+
+hide_st_style = """
+<style>
+#Mainmenu {Visibility : hidden;}
+footer {Visibility : hidden;}
+header {Visibility : hidden;}
+</style>
+"""
+st.markdown(hide_st_style,unsafe_allow_html=True)
