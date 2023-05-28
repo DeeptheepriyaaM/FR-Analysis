@@ -24,3 +24,11 @@ if st.button('Submit'):
     st.balloons()
     st.success("Thanks for Submitting the Time Sheet")
 
+hide_st_style = """
+<style>
+#Mainmenu {Visibility : hidden;}
+footer {Visibility : hidden;}
+header {Visibility : hidden;}
+</style>
+"""
+st.markdown(hide_st_style,unsafe_allow_html=True)
