@@ -127,3 +127,11 @@ if st.checkbox("Show Data Table"):
     st.write("2023")
     st.write(pd.DataFrame({"Categories": attr, "Expenses": values_2023}))
 
+hide_st_style = """
+<style>
+#Mainmenu {Visibility : hidden;}
+footer {Visibility : hidden;}
+header {Visibility : hidden;}
+</style>
+"""
+st.markdown(hide_st_style,unsafe_allow_html=True)
