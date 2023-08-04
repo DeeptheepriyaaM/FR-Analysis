@@ -4,7 +4,7 @@ from pyecharts.charts import Bar
 from streamlit_echarts import st_pyecharts
 
 def main():
-    st.title("Bar-DataZoom (slider+inside) with Streamlit")
+    st.title(" Total Contributions done by our volunteers till now")
 
     # List of x-axis values (names)
     x_data = [
