@@ -92,6 +92,9 @@ elif check == "Event 23":
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
@@ -146,6 +149,9 @@ elif check == "Event 25":
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
@@ -189,6 +195,9 @@ elif check == "Event 26":
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                    "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
@@ -259,6 +268,9 @@ elif check == "Event 30":
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
@@ -305,6 +317,9 @@ elif check == "Event 32":
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
@@ -359,6 +374,9 @@ elif check == "Event 33-35":
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
@@ -420,6 +438,9 @@ elif check == "Event 36-37":
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
@@ -474,6 +495,9 @@ elif check == "Event 40-43":
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
@@ -523,6 +547,9 @@ elif check == "Event 38":
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
