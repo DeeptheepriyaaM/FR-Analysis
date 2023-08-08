@@ -54,6 +54,9 @@ if check == 'Event 22':
                         "shadowColor": "rgba(0, 0, 0, 0.5)",
                     }
                 },
+                "label": {
+                    "formatter": "{b}: {d}%"
+                    },
             }
         ],
     }
