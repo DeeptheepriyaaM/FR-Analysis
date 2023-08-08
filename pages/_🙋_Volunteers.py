@@ -1,6 +1,7 @@
 import streamlit as st
 from pyecharts import options as opts
 from pyecharts.charts import Bar
+from pyecharts.charts import Scatter
 from streamlit_echarts import st_pyecharts
 
 def main():
@@ -77,6 +78,33 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def scatter_visualmap_size(data_x, data_y1, data_y2,data_y3, data_y4):
+    c = (
+        Scatter()
+        .add_xaxis(data_x)
+        .add_yaxis("Event Management", data_y1)
+        .add_yaxis("Needy Hunters", data_y2)
+        .add_yaxis("Internal Stren", data_y3)
+        .add_yaxis("DM", data_y4)
+        .set_global_opts(
+            visualmap_opts=opts.VisualMapOpts(type_="size", max_=150, min_=20),
+        )
+    )
+    
+    return c
+
+# Replace these lists with your actual data
+data_x = ["2020", "2021", "2022", "2023"]
+data_y1 = [100, 80, 120, 70]
+data_y2 = [20, 60, 90, 70]
+data_y3 = [43, 34, 340, 30]
+data_y4 = [30, 40, 60, 70]
+
+st.subheader("Funds Contributions(Monthlyfunds + Event Contributions) Totally based on the Team ")
+final_chart = scatter_visualmap_size(data_x, data_y1, data_y2,data_y3, data_y4)
+st_pyecharts(final_chart, height=500)
 
 hide_st_style = """
 <style>
