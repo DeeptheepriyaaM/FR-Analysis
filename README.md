@@ -5,8 +5,15 @@
 
 Installation :
 
-pip install streamlit # For Installing Streamlig
-pip install streamlit-echarts # For Installing echarts
+###### For Installing Streamlig
+pip install streamlit 
+
+###### For Installing echarts
+pip install streamlit-echarts
+
+###### For Database connection
+pip install st-gsheets-connection
+
+## Not needed as of now
 pip install google-auth # For Connecting Google sheets as a data base
-pip install gsheetsdb # Google sheet database
 pip install pyparsing 
